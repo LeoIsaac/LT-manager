@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  if isLogin
+    <a href="/oauth/logout">ログアウト</a>
+  else
+    <a href="/oauth/login">ログイン</a>

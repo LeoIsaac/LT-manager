@@ -5,11 +5,14 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   var passport = req.session.passport;
   if(isLogin(passport)) {
-    res.render('index', { title: passport.user.displayName });
+    res.render('index', {
+      title: passport.user.displayName,
+      isLogin: true
+    });
   } else {
-    res.render('error', {
-      message: 'Please login',
-      error: {}
+    res.render('index', {
+      title: "LT-manager",
+      isLogin: false
     });
   }
 });
