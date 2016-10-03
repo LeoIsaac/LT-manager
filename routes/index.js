@@ -6,12 +6,12 @@ router.get('/', function(req, res, next) {
   var passport = req.session.passport;
   if(isLogin(passport)) {
     res.render('index', {
-      title: passport.user.displayName,
+      name: passport.user.displayName,
+      img: passport.user.photos[0].value,
       isLogin: true
     });
   } else {
     res.render('index', {
-      title: "LT-manager",
       isLogin: false
     });
   }

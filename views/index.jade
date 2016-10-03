@@ -1,10 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Top
+  p LTを管理するWebアプリです。まだまだ開発途上なので、是非是非プルリク送ってどうぞ！
+  div(class="github-widget" data-repo="leoisaac/lt-manager")
+  script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.4.min.js")
+  script(type="text/javascript" src="https://cdn.rawgit.com/JoelSutherland/GitHub-jQuery-Repo-Widget/master/jquery.githubRepoWidget.min.js")
 
-  if isLogin
-    <a href="/oauth/logout">ログアウト</a>
-  else
-    <a href="/oauth/login">ログイン</a>
+  if !isLogin
+    p 当アプリを使用するには<a href="/oauth/login">ログイン</a>が必要です！
