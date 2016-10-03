@@ -1,5 +1,7 @@
 {
   "tw_consumerKey": "",
   "tw_consumerSecret": "",
-  "tw_callback": ""
+  "tw_callback": "",
+  "redis_port": "",
+  "redis_host": ""
 }

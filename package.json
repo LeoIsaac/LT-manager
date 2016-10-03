@@ -16,6 +16,7 @@
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-twitter": "^1.0.4",
+    "redis": "^2.6.2",
     "serve-favicon": "~2.3.0"
   }
 }
