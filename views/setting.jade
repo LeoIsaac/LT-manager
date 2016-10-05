@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 Setting
+  p 設定ページだよ〜
+
+  if !isLogin
+    p 当アプリを使用するには<a href="/oauth/login">ログイン</a>が必要です！
