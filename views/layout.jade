@@ -1,7 +1,41 @@
 doctype html
 html
   head
-    title= title
+    title LT-manager
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0')
+    //link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.indigo-pink.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(defer, src='https://code.getmdl.io/1.2.1/material.min.js')
   body
-    block content
+    div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+      header.mdl-layout__header
+        div.mdl-layout__header-row
+          span.mdl-layout-title.mdl-layout--large-screen-only LT-Manager
+          div.mdl-layout-spacer
+          span.mdl-chip.mdl-chip--contact
+            if isLogin
+              img.mdl-chip__contact(src='#{img}')
+              span.mdl-chip__text= name
+            else
+              i.mdl-chip__contact.material-icons person
+              span.mdl-chip__text ゲストさん
+          button#demo-menu-lower-right.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons more_vert
+          ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="demo-menu-lower-right")
+            if isLogin
+              a(href=''): li.mdl-menu__item アカウント設定
+              a(href='/oauth/logout'): li.mdl-menu__item ログアウト
+            else
+              a(href='/oauth/login'): li.mdl-menu__item ログイン
+      div.mdl-layout__drawer
+        span.mdl-layout-title Menu
+        nav.mdl-navigation
+          a.mdl-navigation__link(href='') Link
+          a.mdl-navigation__link(href='') Link
+          a.mdl-navigation__link(href='') Link
+          a.mdl-navigation__link(href='') Link
+      main.mdl-layout__content
+        div.page-content
+          block content
