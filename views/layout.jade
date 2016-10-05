@@ -25,7 +25,7 @@ html
             i.material-icons more_vert
           ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="demo-menu-lower-right")
             if isLogin
-              a(href=''): li.mdl-menu__item アカウント設定
+              a(href='/setting'): li.mdl-menu__item アカウント設定
               a(href='/oauth/logout'): li.mdl-menu__item ログアウト
             else
               a(href='/oauth/login'): li.mdl-menu__item ログイン
