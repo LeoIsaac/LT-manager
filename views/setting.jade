@@ -4,5 +4,7 @@ block content
   h2 Setting
   p 設定ページだよ〜
 
-  if !isLogin
-    p 当アプリを使用するには<a href="/oauth/login">ログイン</a>が必要です！
+  form(action="#")
+    div.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+      input#sample3.mdl-textfield__input(type="text", value="#{name}", readonly)
+      label.mdl-textfield__label(for="sample3") Username

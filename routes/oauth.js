@@ -23,6 +23,14 @@ router.get('/callback', passport.authenticate("twitter", {
       console.log("既に登録されています。");
     }
   });
+  client.hkeys(user.id, function(err, val) {
+    for(var key of val) {
+      console.log(key);
+      client.hget(user.id, key, function(err, value) {
+        console.log("key: " + key + ", val: " + value);
+      });
+    }
+  });
   res.redirect("/");
 });
 

@@ -5,7 +5,7 @@ html
     meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0')
     //link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
-    link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.indigo-pink.min.css')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.blue-indigo.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(defer, src='https://code.getmdl.io/1.2.1/material.min.js')
   body
@@ -33,6 +33,9 @@ html
         span.mdl-layout-title Menu
         nav.mdl-navigation
           a.mdl-navigation__link(href='/') Top
+          if isLogin
+            a.mdl-navigation__link(href='/users') Users
+            a.mdl-navigation__link(href='/lts') LTs
       main.mdl-layout__content
         div.page-content
           block content
